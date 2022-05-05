@@ -1,0 +1,49 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+    
+    static class Pair {
+        int min;
+        int max;
+    }
+    
+    public static Pair getMinMax(int arr[]) {
+        Pair MinMax = new Pair();
+        
+        if(arr.length == 1){
+            MinMax.min = arr[0];
+            MinMax.max = arr[0];
+        }
+        
+        
+            if(arr[0] >= arr[1]){ // mistake i was doing it to set this only when arr.length is 2.
+                MinMax.min = arr[1];
+                MinMax.max = arr[0];
+            }else{
+                MinMax.min = arr[0];
+                MinMax.max = arr[1];
+            }
+        
+        
+        for(int i = 2 ; i < arr.length; i++){
+            if(MinMax.max < arr[i]){
+                MinMax.max = arr[i];
+            } else if(MinMax.min > arr[i]){
+                MinMax.min = arr[i];
+                
+            }
+        }
+        return MinMax;
+    }
+    
+	public static void main (String[] args) {
+	    int arr[] = {1000, 11, 445, 1, 330, 3000};
+	    Pair p = getMinMax(arr);
+		System.out.println(p.min +" "+ p.max);
+	}
+}
+https://ide.geeksforgeeks.org/013b9c70-22b5-46e1-b80c-5e1370b211fb
+Output:
+1 3000 (works for negative no also.)
