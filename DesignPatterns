@@ -1,1 +1,10 @@
 Design Pattern:
+
+Client has asked you to create a vehicle library.
+
+           create vehicle    
+Client   -------------------->   vehicle library(Car, Bike, Bus)
+         <-------------------
+           give object   
+           
+           
